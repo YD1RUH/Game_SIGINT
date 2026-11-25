@@ -2,62 +2,68 @@
 
 ![Version](https://img.shields.io/badge/version-1.2-2ea44f)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078D6)
-![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
-![Dear ImGui](https://img.shields.io/badge/Dear%20ImGui-1.91.9b-4b6584)
-![Three.js](https://img.shields.io/badge/Three.js-r160-000000?logo=threedotjs&logoColor=white)
-![Direct3D 11](https://img.shields.io/badge/Direct3D-11-5E5E5E)
-![WebView2](https://img.shields.io/badge/WebView2-runtime-0C59A4)
-![MinGW-w64](https://img.shields.io/badge/build-MSYS2%20MinGW--w64%20GCC-7B3F9E)
-![PowerShell](https://img.shields.io/badge/script-PowerShell-5391FE)
-![Hamlib](https://img.shields.io/badge/Hamlib-rotctld%20%7C%20rigctld-8a6d3b)
 ![Languages](https://img.shields.io/badge/languages-EN%20%7C%20ID%20%7C%20JA-c0392b)
 
 **An 8-bit flavoured signals intelligence (SIGINT) simulation in a single `.exe`.**
 Created by **Octacons / YD1RUH**.
 
-This is the developer README for the source folder. The public release page is
-`release/repo/README.md`.
-
-![The SIGINT room](release/repo/screenshots/01-room.png)
+![The SIGINT room](screenshots/01-room.png)
 
 ## About the game
 
 You are the operator in the SIGINT room: four monitors, a cup of coffee, lo-fi music and
-a cat that now and then walks across the desk. Read the briefing, build the RF chain (SDR,
-antenna, cable, LNA), sweep the spectrum, identify and demodulate the signal, break the
-cipher, locate the transmitter and report to command. Every attempt is randomised.
+a cat that now and then walks across the desk. Then the reports arrive. Harbour radios are
+jammed, a fake cell tower appears, ships get lost to GPS spoofing, a reconnaissance
+satellite passes overhead.
 
-All operations, agencies, satellites and data are fictional and made for learning.
-Intercepting communications without permission is against the law.
+Read the briefing, build the RF chain (SDR, antenna, cable, LNA), sweep the spectrum,
+identify and demodulate the signal, break the cipher, locate the transmitter and report to
+command. Every attempt is randomised, so answers cannot be memorised.
+
+> All operations, agencies, satellites and data in this game are **fictional** and made for
+> learning. Intercepting communications without permission is against the law.
+
+## Features
+
+- Pixel-styled 3D room with four monitors you can focus on.
+- 7 SDRs, 8 antennas, 4 cable types, LNA, gain and sample rate.
+- Spectrum and waterfall with a filter you drag on screen.
+- Cryptanalysis: Caesar, Vigenere, XOR and layered rail fence.
+- Direction finding with lines of bearing.
+- GEO and LEO satellites: TLE, world map, footprint, AOS/LOS, AZ-EL rotator, Doppler.
+- Optional connection to `rotctld` and `rigctld` (Hamlib).
+- A briefcase with 11 short training modules.
+- Signal audio and 5 lo-fi tracks.
+- English, Indonesian and Japanese, with adjustable font size.
 
 ## Screenshots
 
 | Intelligence briefing | Rig building and routing |
 | --- | --- |
-| ![Briefing](release/repo/screenshots/02-briefing.png) | ![Rig](release/repo/screenshots/03-rig.png) |
+| ![Briefing](screenshots/02-briefing.png) | ![Rig](screenshots/03-rig.png) |
 | **Spectrum sweep** | **Demodulator** |
-| ![Sweep](release/repo/screenshots/04-sweep.png) | ![Demodulator](release/repo/screenshots/05-demodulator.png) |
+| ![Sweep](screenshots/04-sweep.png) | ![Demodulator](screenshots/05-demodulator.png) |
 | **Cryptanalysis** | **Direction finding** |
-| ![Cryptanalysis](release/repo/screenshots/06-cryptanalysis.png) | ![Direction finding](release/repo/screenshots/07-direction-finding.png) |
+| ![Cryptanalysis](screenshots/06-cryptanalysis.png) | ![Direction finding](screenshots/07-direction-finding.png) |
 | **Satellite tracking** | **Report to command** |
-| ![Satellite](release/repo/screenshots/08-satellite.png) | ![Report](release/repo/screenshots/09-report.png) |
+| ![Satellite](screenshots/08-satellite.png) | ![Report](screenshots/09-report.png) |
 | **Training briefcase (Japanese)** | **About** |
-| ![Briefcase](release/repo/screenshots/10-briefcase-ja.png) | ![About](release/repo/screenshots/11-about.png) |
+| ![Briefcase](screenshots/10-briefcase-ja.png) | ![About](screenshots/11-about.png) |
 
-## Operations
+## Download and play
 
-| Code | Target | Analysis |
-| --- | --- | --- |
-| OP-01 | VHF jammer | Jammer type |
-| OP-02 | HF letter broadcast | Caesar |
-| OP-03 | Rogue BTS | Traffic analysis |
-| OP-04 | GPS spoofing | Proof of spoofing |
-| OP-05 | X-band radar | ELINT library |
-| OP-06 | FSK data burst | Vigenere |
-| OP-07 | Drone telemetry | XOR with known plaintext |
-| OP-08 | HF Morse | Rail fence and Caesar |
-| OP-09 | GEO satellite, L-band | Unauthorised transponder use |
-| OP-10 | LEO satellite, 437 MHz | Vigenere |
+1. Download [SIGINT-v1.2-win64.zip](SIGINT-v1.2-win64.zip) (open the file, then press **Download raw file**).
+2. Extract it and run `SIGINT.exe`.
+
+Requirements:
+
+- 64-bit Windows 10 or 11.
+- Microsoft Edge WebView2 Runtime (included in Windows 11).
+- Japanese text uses a Japanese font that ships with Windows.
+
+The executable is not code-signed, so Windows SmartScreen may show a warning. On first run
+the game writes a helper file and its cache to `%LOCALAPPDATA%\SigintGame`. Progress is not
+saved.
 
 ## Controls
 
@@ -76,54 +82,52 @@ Intercepting communications without permission is against the law.
 | "SDR gain", "Sample rate" | Gain affects SNR; sample rate sets how fast readings refresh |
 | "Abort mission" (Email) | Cancel the active mission |
 
-## Requirements
+Mission flow: read the report (Email), build the rig (SDR), sweep and lock the signal,
+identify, demodulate, analyse or decrypt (Demodulator), find the direction (Geospatial) and
+send the report (Email). Pick any operation under "Choose operation".
 
-- 64-bit Windows 10 or 11.
-- Microsoft Edge WebView2 Runtime (included in Windows 11).
-- Japanese text uses a Japanese font that ships with Windows.
+## Operations
 
-The game writes `WebView2Loader.dll` and its cache to `%LOCALAPPDATA%\SigintGame`.
-Progress is not saved.
+| Code | Target | Analysis |
+| --- | --- | --- |
+| OP-01 | VHF jammer | Jammer type |
+| OP-02 | HF letter broadcast | Caesar |
+| OP-03 | Rogue BTS | Traffic analysis |
+| OP-04 | GPS spoofing | Proof of spoofing |
+| OP-05 | X-band radar | ELINT library |
+| OP-06 | FSK data burst | Vigenere |
+| OP-07 | Drone telemetry | XOR with known plaintext |
+| OP-08 | HF Morse | Rail fence and Caesar |
+| OP-09 | GEO satellite, L-band | Unauthorised transponder use |
+| OP-10 | LEO satellite, 437 MHz | Vigenere |
+
+### Satellite missions
+
+1. Accept the mission, then press "Load TLE into tracker" in the e-mail.
+2. Build the rig. GEO needs a dish; LEO works with a Yagi or dipole plus LNA.
+3. On Geospatial, Satellites tab: tick `rotctld` and `AUTO TRACK`, or set AZ and EL by hand.
+4. Link the SDR to the tracker for Doppler correction.
+5. LEO: the signal exists only between AOS and LOS. Use "Skip to AOS" or speed up time.
+6. After the analysis, record 90 seconds of telemetry and send the report.
+
+Orbits use a simplified model and are not suitable for tracking real satellites.
 
 ## Real hardware (optional)
 
 The "Real hardware (Hamlib)" panel can connect to `rotctld` (port 4533) and `rigctld`, or to
-SDR++ / gqrx remote control. Nothing connects until you press "Connect". The rotator moves
-only when allowed and time is x1, and receives a stop command on disconnect. This feature
-has not been tested with real hardware. Make sure the antenna area is clear.
+SDR++ / gqrx remote control.
 
-## Building from source
+- Nothing connects until you press "Connect".
+- The rotator moves only when "Allow the physical rotator to move" is ticked and time is x1.
+- On disconnect the game sends a stop command.
+- The SDR is only tuned; the game does not read signals from a real receiver.
 
-Requires [MSYS2](https://www.msys2.org/) with the `mingw-w64-ucrt-x86_64-gcc` package,
-`git` and PowerShell.
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build.ps1      # output: dist\SIGINT.exe
-powershell -ExecutionPolicy Bypass -File .\package.ps1    # output: dist\SIGINT-v1.2-win64.zip
-```
-
-If MSYS2 is not in `C:\msys64`, add `-Mingw <path>\ucrt64\bin`. The build downloads Dear
-ImGui, the WebView2 SDK and Three.js, runs the tests, then links everything. It also needs
-`sruput.mp3` in the project folder.
-
-## Layout
-
-| Path | Contents |
-| --- | --- |
-| `src/main.cpp` | Win32 window, Direct3D 11, WebView2 host |
-| `src/ui.h`, `src/ui_sat.h` | Dear ImGui screens |
-| `src/game.h` | Game rules |
-| `src/missions.h`, `src/variant.h` | Mission data and randomisation |
-| `src/crypto.h`, `src/orbit.h` | Classic ciphers and satellite orbits |
-| `src/net.h` | Optional Hamlib client |
-| `src/content.h` | Training modules and About text |
-| `web/room.html` | 3D room, audio, music |
-| `tests/test_game.cpp` | Checks that every mission can be solved |
-| `release/` | Files for the public binary release |
+**Warning:** this feature has been tested against a simulated server only, not against real
+hardware. Make sure the antenna area is clear before allowing the rotator to move.
 
 ## Credits
 
-Game by **Octacons / YD1RUH**. Copyright 2026. Third-party components and the Natural Earth
-map data are listed in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
+Game by **Octacons / YD1RUH**. Copyright 2026. Third-party notices are included in the
+download.
 
 73 de YD1RUH
