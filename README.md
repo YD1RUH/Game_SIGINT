@@ -30,6 +30,20 @@ cipher, locate the transmitter and report to command. Every attempt is randomise
 All operations, agencies, satellites and data are fictional and made for learning.
 Intercepting communications without permission is against the law.
 
+## Screenshots
+
+| Intelligence briefing | Rig building and routing |
+| --- | --- |
+| ![Briefing](release/repo/screenshots/02-briefing.png) | ![Rig](release/repo/screenshots/03-rig.png) |
+| **Spectrum sweep** | **Demodulator** |
+| ![Sweep](release/repo/screenshots/04-sweep.png) | ![Demodulator](release/repo/screenshots/05-demodulator.png) |
+| **Cryptanalysis** | **Direction finding** |
+| ![Cryptanalysis](release/repo/screenshots/06-cryptanalysis.png) | ![Direction finding](release/repo/screenshots/07-direction-finding.png) |
+| **Satellite tracking** | **Report to command** |
+| ![Satellite](release/repo/screenshots/08-satellite.png) | ![Report](release/repo/screenshots/09-report.png) |
+| **Training briefcase (Japanese)** | **About** |
+| ![Briefcase](release/repo/screenshots/10-briefcase-ja.png) | ![About](release/repo/screenshots/11-about.png) |
+
 ## Operations
 
 | Code | Target | Analysis |
