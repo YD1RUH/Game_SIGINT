@@ -127,7 +127,6 @@ hardware. Make sure the antenna area is clear before allowing the rotator to mov
 
 ## Credits
 
-Game by **Octacons / YD1RUH**. Copyright 2026. Third-party notices are included in the
-download.
+Game by **Octacons / YD1RUH**. Copyright 2026. 
 
 73 de YD1RUH
